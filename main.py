@@ -1,14 +1,13 @@
 import kivy
+import sp as sp
 
 from kivy.app import App
 from kivy.uix.image import Image
 from kivy.uix.label import Label
-from kivy.uix.boxlayout import BoxLayout
+from kivy.metrics import sp
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
-from kivy.graphics import GraphicException
-from kivy.uix.layout import Layout
-from kivy.graphics import Canvas
+
 
 
 
@@ -16,24 +15,22 @@ from kivy.graphics import Canvas
 
 class Trivia(App):
     def build(self):
-        #with self.canvas:
-           # Color(1.,1.,0)
+
         self.window = GridLayout(orientation = 'tb-lr')
         self.window.cols = 1
 
-        #self.window.size_hint = (0.5,0.5)
-        #self.window.pos_hint = {"center_x":0.5, "center_y":0.75}
+
         self.label = Label(
                             text='How FAT is your dog?',
                             size_hint = (1,0.23),
-                            font_size = 20,
+                            font_size = 20, sp,
                             color = '#3399FF')
 
         self.window.add_widget(self.label)
         self.button = Button(
                             text='Want to find out?\n     Click Here',
                             size_hint = (1,0.25),
-                            font_size = 20,
+                            font_size = 20sp,
                             color = '#FF0000')
         self.button.background_color = '#9C27B0'
         self.button.bind(on_press=self.callback)
